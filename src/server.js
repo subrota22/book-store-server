@@ -130,7 +130,7 @@ app.get("/bookData/:id" , async (req ,res) => {
    const insertingData = req.body ;
    const findData  = await usersCollection.findOne({email:req.body.email}) ;
    if(findData){
-    return res.status(400).send("existed") ;
+    return res.status(201).send({existed:"Welcome for back to us!!"}) ;
    }else{
    const result = await usersCollection.insertOne(insertingData) ;
    return res.status(201).send(result) ;
